@@ -4,7 +4,13 @@
 
 @section('content')
 <h1>Libri</h1>
-{{$libri['titolo']}}
-<br>
-{{$libri['autore']}}
+<ul>
+    @forelse ($books as $key=>$book)
+
+    <li>{{ $book->title }}-{{ $key }}</li>
+@empty
+    <p>No books</p>
+@endforelse
+</ul>
+
 @endsection
